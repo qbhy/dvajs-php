@@ -1,2 +1,4 @@
-example/node_modules
-example/build
+node_modules/
+build/
+vendor/
+composer.lock
