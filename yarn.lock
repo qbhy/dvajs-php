@@ -142,7 +142,7 @@ aws4@^1.2.1:
   version "1.6.0"
   resolved "http://registry.npm.taobao.org/aws4/download/aws4-1.6.0.tgz#83ef5ca860b2b32e4a0deedee8c771b9db57471e"
 
-babel-cli@^6.3.17:
+babel-cli@^6.24.1:
   version "6.24.1"
   resolved "http://registry.npm.taobao.org/babel-cli/download/babel-cli-6.24.1.tgz#207cd705bba61489b2ea41b5312341cf6aca2283"
   dependencies:
@@ -789,7 +789,7 @@ babel-preset-flow@^6.23.0:
   dependencies:
     babel-plugin-transform-flow-strip-types "^6.22.0"
 
-babel-preset-react@^6.3.13:
+babel-preset-react@^6.24.1:
   version "6.24.1"
   resolved "http://registry.npm.taobao.org/babel-preset-react/download/babel-preset-react-6.24.1.tgz#ba69dfaea45fc3ec639b6a4ecea6e17702c91380"
   dependencies:
@@ -2222,6 +2222,12 @@ node-fetch@^1.0.1:
   dependencies:
     encoding "^0.1.11"
     is-stream "^1.0.1"
+
+node-jsx@^0.13.3:
+  version "0.13.3"
+  resolved "http://registry.npm.taobao.org/node-jsx/download/node-jsx-0.13.3.tgz#3d0568c10601c72f154e872d0e6b9cdf0a6dc4f8"
+  dependencies:
+    jstransform "11"
 
 node-pre-gyp@^0.6.36:
   version "0.6.36"

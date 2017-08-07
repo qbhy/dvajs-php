@@ -8,17 +8,35 @@ module.exports = {
         rules: [
             {
                 test: /\.js$/,
+                exclude: /(node_modules|bower_components)/,
                 use: [
                     {
                         loader: 'babel-loader',
                         options: {
-                            presets: ['env']
+                            presets: ['env'],
+                            plugins: ['transform-runtime'],
+                            modules: true,
+
                         }
                     },
                     {
+                        // exclude: /(node_modules|bower_components)/,
                         loader: 'jsx-loader',
+                        options: {
+                            modules: true
+                        }
                     }
                 ]
+            },
+            {
+                test: /\.ts$/,
+                // exclude: /(node_modules|bower_components)/,
+                use: {
+                    loader: 'ts-loader',
+                    options: {
+                        modules: true
+                    }
+                }
             },
         ]
     }

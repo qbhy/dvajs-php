@@ -3,8 +3,6 @@ import {connect} from 'dva';
 
 
 class IndexPage extends React.Component {
-
-
     render() {
         return (
             <div>
@@ -16,4 +14,4 @@ class IndexPage extends React.Component {
 
 IndexPage.propTypes = {};
 
-export default connect()(IndexPage);
+export default connect(state => state)(IndexPage);

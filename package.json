@@ -1,31 +1,36 @@
 {
-  "name": "dvajs-php",
-  "private": true,
-  "version": "1.0.0",
-  "scripts": {
-    "make": "npm run make-dev && npm run make-min && npm run make-table",
-    "make-dev": "browserify -t [ envify --NODE_ENV development ] src/react-bundle.js > build/react-bundle.js",
-    "make-min": "browserify -t [ envify --NODE_ENV production ] src/react-bundle.js | uglifyjs > build/react-bundle.min.js",
-    "make-table": "babel --presets react app/dist/index.js > build/index.js"
-  },
-  "dependencies": {
-    "babel-cli": "^6.3.17",
-    "babel-core": "^6.25.0",
-    "babel-loader": "^7.1.1",
-    "babel-plugin-transform-runtime": "^6.23.0",
-    "babel-preset-env": "^1.6.0",
-    "babel-preset-es2015": "^6.24.1",
-    "babel-preset-react": "^6.3.13",
-    "babel-preset-stage-0": "^6.24.1",
-    "babel-runtime": "^6.25.0",
-    "browserify": "^12.0.1",
-    "dva": "^1.2.1",
-    "envify": "^3.4.0",
-    "jsx-loader": "^0.13.2",
-    "react": "^0.14.5",
-    "react-dom": "^0.14.5",
-    "ts-loader": "^2.3.2",
-    "typescript": "^2.4.2",
-    "uglifyjs": "^2.4.10"
-  }
+    "name": "dvajs-php",
+    "private": true,
+    "version": "1.0.0",
+    "scripts": {
+        "make": "npm run make-dev && npm run make-min && npm run make-table",
+        "make-dev": "browserify -t [ envify --NODE_ENV development ] src/react-bundle.js > build/react-bundle.js",
+        "make-min": "browserify -t [ envify --NODE_ENV production ] src/react-bundle.js | uglifyjs > build/react-bundle.min.js",
+        "make-table": "babel --presets react app/dist/index.js > build/index.js",
+        "start": "babel-node bridge.js --presets es2015,stage-2,babel-preset-es2015,babel-preset-react"
+    },
+    "dependencies": {
+        "babel-core": "^6.25.0",
+        "babel-loader": "^7.1.1",
+        "babel-plugin-transform-runtime": "^6.23.0",
+        "babel-preset-env": "^1.6.0",
+        "babel-preset-react": "^6.24.1",
+        "babel-preset-stage-0": "^6.24.1",
+        "babel-runtime": "^6.25.0",
+        "browserify": "^12.0.1",
+        "dva": "^1.2.1",
+        "envify": "^3.4.0",
+        "jsx-loader": "^0.13.2",
+        "node-jsx": "^0.13.3",
+        "react": "^0.14.5",
+        "react-dom": "^0.14.5",
+        "ts-loader": "^2.3.2",
+        "typescript": "^2.4.2",
+        "uglifyjs": "^2.4.10"
+    },
+    "devDependencies": {
+        "babel-cli": "^6.24.1",
+        "babel-preset-es2015": "^6.24.1",
+        "babel-preset-stage-2": "^6.24.1"
+    }
 }

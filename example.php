@@ -1,17 +1,31 @@
 <?php
 
+require 'Pipe.php';
 
-require 'DvaJs.php';
+$path = __DIR__;
 
-$dva = new DvaJs(file_get_contents(__DIR__ . '/src/server.js'));
+$cmd = "cd $path && npm start";
 
-echo $dva->render([
-    'url' => '/',
-    'initialState' => [
-        'user' => [
-            [
-                'name' => 'qbhy'
-            ]
-        ]
+//shell_exec($cmd);
+//
+$pipe = new Pipe($cmd, 4);
+
+$data = $pipe->execute([
+    'method' => 'render',
+    'params' => [
+        ['url' => '/', 'initialState' => ['user' =>
+            ['name' => 'qbhy']
+        ]]
     ]
 ]);
+print_r($data);
+
+
+//$data = $pipe->execute([
+//    "method" => "hello"
+//]);
+//print_r($data);
+//$data = $pipe->execute([
+//    "method" => "hello"
+//]);
+//print_r($data);

@@ -3,7 +3,7 @@ import {renderToString} from 'react-dom/server';
 import {routes} from './router';
 import createApp from './createApp';
 
-function render(req) {
+export default function render(req) {
     match({
         routes,
         location: req.url,

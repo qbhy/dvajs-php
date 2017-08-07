@@ -1,6 +1,6 @@
 import React from 'react';
 import {Router, Route} from 'dva/router';
-import Index from 'routes/IndexPage';
+import Index from './routes/IndexPage';
 
 export const routes = (
     <div>
