@@ -1,42 +1,23 @@
+const path = require('path');
+
 module.exports = {
-    entry: './src/server.js',
+    entry: './src/render.js',
     output: {
         path: __dirname + "/build",
-        filename: 'server.js'
+        filename: 'render.js'
     },
     module: {
         rules: [
             {
                 test: /\.js$/,
-                exclude: /(node_modules|bower_components)/,
+                exclude: [
+                    path.resolve(__dirname, 'node_modules')
+                ],
                 use: [
                     {
                         loader: 'babel-loader',
-                        options: {
-                            presets: ['env'],
-                            plugins: ['transform-runtime'],
-                            modules: true,
-
-                        }
                     },
-                    {
-                        // exclude: /(node_modules|bower_components)/,
-                        loader: 'jsx-loader',
-                        options: {
-                            modules: true
-                        }
-                    }
                 ]
-            },
-            {
-                test: /\.ts$/,
-                // exclude: /(node_modules|bower_components)/,
-                use: {
-                    loader: 'ts-loader',
-                    options: {
-                        modules: true
-                    }
-                }
             },
         ]
     }

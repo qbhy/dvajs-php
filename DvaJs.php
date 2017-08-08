@@ -8,10 +8,9 @@ class DvaJs
     {
         $react = [];
         // stubs, react
-        $react[] = "var console = {warn: function(){}, error: print};";
+        $react[] = "var console = {warn: function(){}, error: print, log: print};";
         $react[] = "var global = global || this, self = self || this, window = window || this;";
         $react[] = $serverSrc;
-        $react[] = "var React = global.React, ReactDOM = global.ReactDOM, ReactDOMServer = global.ReactDOMServer;";
         // app's components
         $concatenated = implode(";\n", $react);
 
@@ -51,8 +50,8 @@ class DvaJs
      */
     public function render(array $request)
     {
-        $data = json_encode($request['initialState']);
-        $str = "print(renderFullPage('a','$data'))";
+        $data = json_encode($request);
+        $str = "Render($data)";
         return $this->executeJS($str);
     }
 

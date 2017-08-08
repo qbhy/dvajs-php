@@ -6,7 +6,7 @@ class IndexPage extends React.Component {
     render() {
         return (
             <div>
-                首页 ?
+                首页 ? {JSON.stringify(this.props.user)}
             </div>
         );
     }
