@@ -1,0 +1,10 @@
+[submodule "deps/CoverMonkey"]
+	path = deps/CoverMonkey
+	url = https://github.com/davidflanagan/CoverMonkey.git
+[submodule "deps/webidl.js"]
+	path = deps/webidl.js
+	url = https://github.com/darobin/webidl.js.git
+[submodule "deps/parser-lib"]
+	path = deps/parser-lib
+	url = https://github.com/nzakas/parser-lib.git
+

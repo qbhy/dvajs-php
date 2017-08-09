@@ -8,8 +8,11 @@ class DvaJs
     {
         $react = [];
         // stubs, react
-        $react[] = "var console = {warn: function(){}, error: print, log: print};";
+        $react[] = "var console = {warn: function(){}, error: print, log: function(){}};";
         $react[] = "var global = global || this, self = self || this, window = window || this;";
+        $react[] = "var document = window.document;";
+//        $react[] = file_get_contents(__DIR__ . '/testrunner.js');
+//        $react[] = file_get_contents(__DIR__ . '/core.js');
         $react[] = $serverSrc;
         // app's components
         $concatenated = implode(";\n", $react);
@@ -26,7 +29,7 @@ class DvaJs
      * @throws V8JsException $e
      * @return string The execution response
      */
-    private function executeJS($js)
+    public function executeJS($js)
     {
         try {
             ob_start();

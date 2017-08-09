@@ -1,0 +1,59 @@
+body {
+    padding-top: 0.25em;
+    padding-left: 0em;
+    padding-right: 1em;
+}
+
+#url>input[type="text"] {
+    width: 40%;
+}
+
+#renderframe {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    height: 100%;
+    width: 50%;
+}
+
+#new-element {
+}
+
+.element {
+    border-top: 1px solid white;
+    display: block;
+    padding: 0.5em;
+    padding-left: 1em;
+    padding-bottom: 0em;
+}
+
+.dragover {
+    border-top: 1px solid black;
+}
+
+.textnode {
+    white-space: pre;
+    font-family: monospace;
+    margin: 0.5em;
+}
+
+.removed {
+    display: none;
+    text-decoration: line-through;
+}
+
+.node-id {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    color: #cccccc;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.collapsed:after {
+    content: "...";
+}
+
+.hidden {
+    display: none;
+}

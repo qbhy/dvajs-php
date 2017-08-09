@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style type="text/css">
+iframe { width: 49%; height: 40em; }
+input[type=text] { width: 94% }
+input[type=button] { width: 5% }
+
+span { padding: 1em; }
+.selected { border: 1px solid black; background-color: #efefef }
+        </style>
+        <!--<script src="http://livedom.validator.nu/nu.validator.htmlparser.HtmlParser.nocache"></script>-->
+        <script src="parser.js"></script>
+        <title>html parser</title>
+    </head>
+    <body>
+        <span id="native"><a href="parser.html">Native</a></span>
+        <span id="domjs"><a href="parser.html?domjs">domjs</a></span>
+        <span id="domjsdumpevents"><a href="parser.html?domjsdumpevents">domjs dump events</a></span>
+        <form onsubmit="submitted(this); return false">
+            <input type="text" name="url" value="parse.html"></input>
+            <input type="submit" value="go"></input>
+        </form>
+        <iframe onload="loaded(this)" id="theiframe" src="parse.html"></iframe>
+        <iframe id="outputiframe" src="blank.html"></iframe>
+        <h1>Parse times:</h1>
+        <div id="parsetimes">
+        </div>
+
+        <script type="application/javascript; version=1.8" src="parsermain.js">
+        </script>
+
+    </body>
+</html>

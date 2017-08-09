@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'dva';
-
+import styles from './indexPage.scss';
 
 class IndexPage extends Component {
 
@@ -21,11 +21,12 @@ class IndexPage extends Component {
 
     render() {
         return (
-            <div>
-                <button onClick={()=>{
+            <div className={styles.a}>
+                <button onClick={() => {
                     alert('click');
-                }}>按钮</button>
-                首页 {this.state.loading ? this.props.user[0].name : 'loading false'}
+                }}>按钮
+                </button>
+                首页 {this.state.loading ? 'aa' : 'loading false'}
             </div>
         );
     }

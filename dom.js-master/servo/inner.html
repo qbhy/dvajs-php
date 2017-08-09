@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script type="text/javascript">
+var counter = 1;
+function func() {
+	var out = document.getElementById('output');
+	out.innerHTML = 'Hello World ' + counter++; setTimeout(func, 1000);
+}
+
+window.addEventListener('load', func);
+
+		</script>
+	</head>
+	<body>
+		<div id="output">
+
+		</div>
+	</body>
+</html>

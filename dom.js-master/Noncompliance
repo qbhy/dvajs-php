@@ -1,0 +1,31 @@
+This is a list of areas areas where dom.js does not conform to the DOM
+or WebIDL or HTML specifications.
+
+1) The [[Class]] property of dom.js objects do not match those required
+by WebIDL.  There is no way in core JS to set this property
+
+2) In the host DOM and spec, typeof Node === "object" and
+document.body instanceof Node.  But native JS objects can't be used with
+instanceof, only functions can be on the rhs of that operator.  So in
+dom.js, DOM types like Node and Element are functions rather than
+objects so that instanceof works correctly.
+
+3) Proxy objects are required to report their properties as
+configurable. But WebIDL says that indexed properties that do not have
+an indexed deleter (like NodeList) should be non-configurable.
+
+- HTML says that document.body returns the first <body> or <frameset>
+  element. dom.js does not handle framesets, at least not for now.
+
+- The default value of the tabIndex attribute depends on whether an
+  element is focusable or not.  But the definition of "focusable" is
+  complex and requires knowing whether the element is renderable or
+  not.  For now, I've just done a simple test based on tagname and
+  contenteditable.  Firefox seems to do something similar.
+
+4) WebIDL says that interface objects (like HTMLElement) are data
+properties with [[Writable]] true.  But for lazy initialization, ours
+start off as accessor properties with a getter and a setter. They
+change to data properties the first time they are read, but if queried
+with Object.getOwnPropertyDescriptor() this divergence from the spec
+will be observable.

@@ -21,6 +21,7 @@ function renderPage($html)
     ";
 }
 
-echo renderPage($html);
+//echo renderPage($html);
+echo renderPage("<div id='root'></div>");
 
 
