@@ -4,7 +4,7 @@ import Index from './routes/IndexPage';
 
 export const routes = (
     <div>
-        <Route path="/" component={Index}/>
+        <Route path="/example.php" component={Index}/>
     </div>
 );
 

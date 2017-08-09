@@ -1,10 +1,13 @@
 const path = require('path');
 
 module.exports = {
-    entry: './src/render.js',
+    entry: {
+        server: './src/server.js',
+        app: './src/client.js',
+    },
     output: {
         path: __dirname + "/build",
-        filename: 'render.js'
+        filename: '[name].js'
     },
     module: {
         rules: [

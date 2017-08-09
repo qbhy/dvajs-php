@@ -1,12 +1,31 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {connect} from 'dva';
 
 
-class IndexPage extends React.Component {
+class IndexPage extends Component {
+
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            loading: true
+        };
+    }
+
+    componentDidMount() {
+        setTimeout(() => {
+            this.setState({loading: false});
+        }, 2000);
+    }
+
+
     render() {
         return (
             <div>
-                首页 ? {JSON.stringify(this.props.user)}
+                <button onClick={()=>{
+                    alert('click');
+                }}>按钮</button>
+                首页 {this.state.loading ? this.props.user[0].name : 'loading false'}
             </div>
         );
     }
