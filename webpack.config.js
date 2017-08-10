@@ -49,6 +49,12 @@ module.exports = {
                             },
                         },
                         {
+                            loader: 'postcss-loader',
+                            options: {
+                                sourceMap: true,
+                            },
+                        },
+                        {
                             loader: 'sass-loader',
                             options: {
                                 sourceMap: true,
@@ -58,7 +64,7 @@ module.exports = {
                     fallback: 'style-loader',
                 }),
             }
-        ]
+        ],
     },
     plugins: [
         new ExtractTextPlugin("app.css"),
