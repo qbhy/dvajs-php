@@ -1,5 +1,5 @@
 const path = require('path');
-
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 module.exports = {
     entry: {
         server: './src/server.js',
@@ -23,16 +23,32 @@ module.exports = {
                 ]
             },
             {
-                test: /\.scss$/,
-                use: [{
-                    loader: "style-loader" // 将 JS 字符串生成为 style 节点
-                }, {
-                    loader: "css-loader" // 将 CSS 转化成 CommonJS 模块
-                }, {
-                    loader: "sass-loader" // 将 Sass 编译成 CSS
-                }]
+                test: /\.(scss|css)$/,
+                use: ExtractTextPlugin.extract({
+                    use: [
+                        {
+                            loader: 'css-loader',
+                            options: {
+                                modules: true,
+                                importLoaders: 1,
+                                localIdentName: '[local]_[hash:base64:5]',
+                                sourceMap: true,
+                            },
+                        },
+                        {
+                            loader: 'sass-loader',
+                            options: {
+                                sourceMap: true,
+                            },
+                        },
+                    ],
+                    fallback: 'style-loader',
+                }),
             }
         ]
-    }
+    },
+    plugins: [
+        new ExtractTextPlugin("app.css"),
+    ]
 }
 ;

@@ -2,7 +2,6 @@ import {match, createMemoryHistory} from 'dva/router';
 import {renderToString} from 'react-dom/server';
 import {routes} from './router';
 import createApp from './createApp';
-require('jsdom-global');
 
 
 function renderFullPage(html, initialState) {

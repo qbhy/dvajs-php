@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'dva';
 import styles from './indexPage.scss';
 
+
 class IndexPage extends Component {
 
     constructor(props) {
@@ -17,7 +18,6 @@ class IndexPage extends Component {
             this.setState({loading: false});
         }, 2000);
     }
-
 
     render() {
         return (

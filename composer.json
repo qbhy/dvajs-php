@@ -2,8 +2,7 @@
     "name": "96qbhy/dvajs-php",
     "description": "基于 react-php-v8js 的 dvajs 的 php 服务端渲染实现。",
     "require": {
-        "ext-v8js": ">=0.1.3",
-        "reactjs/react-php-v8js": "^2.0"
+        "ext-v8js": ">=0.1.3"
     },
     "license": "BSD-3-Clause"
 }

@@ -15,6 +15,7 @@ function renderPage($html)
 {
     return "
     <html>
+    <link rel='stylesheet' href='/build/app.css'>
     $html
     <script src='/build/app.js'></script>
     </html>
@@ -22,6 +23,6 @@ function renderPage($html)
 }
 
 //echo renderPage($html);
-echo renderPage("<div id='root'></div>");
+echo renderPage($html);
 
 
