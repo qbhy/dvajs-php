@@ -26,6 +26,7 @@ class IndexPage extends Component {
                     alert('click');
                 }}>按钮
                 </button>
+                <img src={require('../assets/qbhy.png')} alt=""/>
                 首页 {this.state.loading ? 'aa' : 'loading false'}
             </div>
         );

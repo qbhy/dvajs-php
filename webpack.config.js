@@ -23,6 +23,19 @@ module.exports = {
                 ]
             },
             {
+                test: /\.(png|jpg|gif)$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            // name: '[path][name][hash].[ext]',
+                            name: '[path][name].[ext]',
+                            publicPath: '/build/'
+                        }
+                    }
+                ]
+            },
+            {
                 test: /\.(scss|css)$/,
                 use: ExtractTextPlugin.extract({
                     use: [
