@@ -1,5 +1,7 @@
 const path = require('path');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const webpack = require('webpack');
+
 module.exports = {
     entry: {
         server: './src/server.js',
@@ -46,6 +48,7 @@ module.exports = {
                                 importLoaders: 1,
                                 localIdentName: '[local]_[hash:base64:5]',
                                 sourceMap: true,
+                                minimize: true
                             },
                         },
                         {
@@ -68,6 +71,15 @@ module.exports = {
     },
     plugins: [
         new ExtractTextPlugin("app.css"),
+        new webpack.optimize.ModuleConcatenationPlugin(),
+        // new webpack.optimize.UglifyJsPlugin({
+        //     output: {
+        //         comments: false,  // remove all comments
+        //     },
+        //     compress: {
+        //         warnings: false
+        //     }
+        // })
     ]
 }
 ;
