@@ -2,7 +2,7 @@
 
 require 'vendor/autoload.php';
 
-$dva = new \Qbhy\DvaJs\DvaJs(file_get_contents(__DIR__ . '/build/server.js'));
+$dva = new \Qbhy\DvaJs\DvaJs(file_get_contents(__DIR__ . '/views/build/server.js'));
 $html = $dva->render([
     'url' => $_SERVER['REQUEST_URI'],
     'initialState' => ['user' => [
@@ -15,9 +15,9 @@ function renderPage($html)
 {
     return "
     <html>
-    <link rel='stylesheet' href='/build/app.css'>
+    <link rel='stylesheet' href='/views/build/app.css'>
     $html
-    <script src='/build/app.js'></script>
+    <script src='/views/build/app.js'></script>
     </html>
     ";
 }

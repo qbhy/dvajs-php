@@ -2,7 +2,7 @@
 <?php
 
 if (!isset($argv[1])) {
-    exit('缺少参数');
+    exit('缺少路径参数' . PHP_EOL);
 }
 
 function copy_dir($src, $dst)
