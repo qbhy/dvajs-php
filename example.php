@@ -1,8 +1,8 @@
 <?php
 
-require 'DvaJs.php';
+require 'vendor/autoload.php';
 
-$dva = new DvaJs(file_get_contents(__DIR__ . '/build/server.js'));
+$dva = new \Qbhy\DvaJs\DvaJs(file_get_contents(__DIR__ . '/build/server.js'));
 $html = $dva->render([
     'url' => $_SERVER['REQUEST_URI'],
     'initialState' => ['user' => [

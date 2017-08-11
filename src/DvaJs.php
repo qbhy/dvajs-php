@@ -1,5 +1,9 @@
 <?php
 
+namespace Qbhy\DvaJs;
+
+use V8Js;
+
 class DvaJs
 {
     public $errorHandler = null;
