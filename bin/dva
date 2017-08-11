@@ -1,0 +1,27 @@
+#!/usr/bin/env php
+<?php
+
+if (!isset($argv[1])) {
+    exit('缺少参数');
+}
+
+function copy_dir($src, $dst)
+{
+    $dir = opendir($src);
+    @mkdir($dst);
+    while (false !== ($file = readdir($dir))) {
+        if (($file != '.') && ($file != '..')) {
+            if (is_dir($src . '/' . $file)) {
+                copy_dir($src . '/' . $file, $dst . '/' . $file);
+                continue;
+            } else {
+                copy($src . '/' . $file, $dst . '/' . $file);
+            }
+        }
+    }
+    closedir($dir);
+}
+
+
+copy_dir(__DIR__ . '/../views', $argv[1]);
+

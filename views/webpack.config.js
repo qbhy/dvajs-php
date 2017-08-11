@@ -32,7 +32,7 @@ module.exports = {
                         options: {
                             // name: '[path][name][hash].[ext]',
                             name: '[path][name].[ext]',
-                            publicPath: '/build/'
+                            publicPath: '/views/build/'
                         }
                     }
                 ]
@@ -72,6 +72,7 @@ module.exports = {
     plugins: [
         new ExtractTextPlugin("app.css"),
         new webpack.optimize.ModuleConcatenationPlugin(),
+        new webpack.HotModuleReplacementPlugin(),
         // new webpack.optimize.UglifyJsPlugin({
         //     output: {
         //         comments: false,  // remove all comments
