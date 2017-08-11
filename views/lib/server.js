@@ -1,6 +1,6 @@
 import {match, createMemoryHistory} from 'dva/router';
 import {renderToString} from 'react-dom/server';
-import {routes} from './router';
+import {routes} from '../router';
 import createApp from './createApp';
 
 

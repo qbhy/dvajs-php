@@ -4,8 +4,8 @@ const webpack = require('webpack');
 
 module.exports = {
     entry: {
-        server: './src/server.js',
-        app: './src/client.js',
+        server: './lib/server.js',
+        app: './lib/client.js',
     },
     output: {
         path: __dirname + "/build",

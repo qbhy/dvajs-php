@@ -1,8 +1,8 @@
-node_modules/
+views/node_modules/
 build/
 .idea/
 vendor/
 composer.lock
-package-lock.json
-yarn.lock
+views/package-lock.json
+views/yarn.lock
 .DS_Store
