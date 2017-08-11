@@ -15,7 +15,10 @@ function renderPage($html)
 {
     return "
     <html>
-    <link rel='stylesheet' href='/views/build/app.css'>
+    <head>
+        <link rel='stylesheet' href='/views/build/app.css'>
+        <title> dvaJs for php</title>
+    </head>
     $html
     <script src='/views/build/app.js'></script>
     </html>
