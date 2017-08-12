@@ -33,7 +33,7 @@ class DvaJs
      * @throws V8JsException $e
      * @return string The execution response
      */
-    public function executeJS($js)
+    private function executeJS($js)
     {
         try {
             ob_start();
