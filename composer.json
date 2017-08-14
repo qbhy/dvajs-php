@@ -1,6 +1,6 @@
 {
     "name": "96qbhy/dvajs",
-    "description": "基于 react-php-v8js 的 dvajs 的 php 服务端渲染实现。",
+    "description": "dvajs 的 php 服务端渲染实现。",
     "require": {
         "ext-v8js": ">=0.1.3"
     },
