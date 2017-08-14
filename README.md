@@ -18,6 +18,7 @@ $ composer require 96qbhy/dvajs:dev-master
 
 ## 使用示例(临时)
 
+### 克隆本项目运行
 ```bash
 git clone https://github.com/96qbhy/dvajs-php.git
 cd dvajs-php/views
@@ -28,10 +29,13 @@ composer dumpautoload
 php -S localhost:8088
 ```
 完成以上操作后在浏览器访问 `http://localost:8088/example.php` 即可看到效果。  
+  
+### 在框架中集成
+ ...
 > 在 php 框架中集成的例子还没写好。我会尽快写好。
 
 
 
-[dvajs-php](https://github.com/96qbhy/dvajs-php)
+[dvajs-php](https://github.com/96qbhy/dvajs-php)  
 96qbhy@gmail.com
 

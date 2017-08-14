@@ -20,6 +20,9 @@ module.exports = {
                 ],
                 use: [
                     {
+                        loader: 'react-hot-loader/webpack',
+                    },
+                    {
                         loader: 'babel-loader',
                     },
                 ]
@@ -72,14 +75,22 @@ module.exports = {
     plugins: [
         new ExtractTextPlugin("app.css"),
         new webpack.optimize.ModuleConcatenationPlugin(),
-        new webpack.HotModuleReplacementPlugin(),
+        // new webpack.HotModuleReplacementPlugin() // 启用 HMR
+        // new webpack.optimize.CommonsChunkPlugin({
+        //     name: ['polyfills', 'vendor'].reverse()
+        // }),
         // new webpack.optimize.UglifyJsPlugin({
-        //     output: {
-        //         comments: false,  // remove all comments
+        //     sourceMap: false,
+        //
+        //     beautify: false,
+        //     mangle: {
+        //         screw_ie8: true,
+        //         keep_fnames: true
         //     },
         //     compress: {
-        //         warnings: false
-        //     }
+        //         screw_ie8: true
+        //     },
+        //     comments: false
         // })
     ]
 }

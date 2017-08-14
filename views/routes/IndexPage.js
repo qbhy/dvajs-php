@@ -20,14 +20,11 @@ class IndexPage extends Component {
     }
 
     render() {
+        const {user} = this.props;
         return (
-            <div className={styles.a}>
-                <button onClick={() => {
-                    alert('click');
-                }}>按钮
-                </button>
+            <div className={styles.container}>
                 <img src={require('../assets/qbhy.png')}/>
-                首页 {this.state.loading ? 'aa' : 'loading false'}
+                <h2>dvajs for php</h2>
             </div>
         );
     }

@@ -2,12 +2,17 @@
 
 require 'vendor/autoload.php';
 
-$dva = new \Qbhy\DvaJs\DvaJs(file_get_contents(__DIR__ . '/views/build/server.js'));
+$serverSrc = file_get_contents(__DIR__ . '/views/build/server.js');
+$dva = new \Qbhy\DvaJs\DvaJs($serverSrc);
 $html = $dva->render([
     'url' => $_SERVER['REQUEST_URI'],
-    'initialState' => ['user' => [
-        ['name' => 'qbhy', 'age' => 18]
-    ]]
+    'initialState' => [
+        'user' => [ // user model
+            'list' => [
+                ['name' => 'qbhy', 'age' => 18]
+            ]
+        ]
+    ]
 ]);
 
 

@@ -1,8 +1,17 @@
 body {
-    background: yellow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.a {
-    color: red;
-    transition: all .3s ease;
+:global {
+    .color {
+        color: #ff0;
+    }
+}
+
+.container {
+    h2 {
+        text-align: center;
+    }
 }
