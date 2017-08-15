@@ -31,8 +31,9 @@ php -S localhost:8088
 完成以上操作后在浏览器访问 `http://localost:8088/example.php` 即可看到效果。  
   
 ### 在框架中集成
- ...
-> 在 php 框架中集成的例子还没写好。我会尽快写好。
+#### 在 `laravel` 中集成 `dvajs-php` 
+[https://github.com/96qbhy/dvajs-laravel](https://github.com/96qbhy/dvajs-laravel)
+> 更多例子请稍等，或者可以给我 PR 。
 
 
 
